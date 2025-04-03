@@ -24,7 +24,7 @@ const sampleListings = [
     description:
       "Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge.",
     image:
-      "../model/black.jpg",
+      "https://amazingarchitecture.com/storage/711/Deep-Villa-Atrey-and-Associates-New-Delhi-ndia-Amazing-Architecture-House.jpg",
     price: 1000,
     location: "Aspen",
     country: "United States",
