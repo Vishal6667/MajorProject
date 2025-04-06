@@ -56,7 +56,7 @@ if(error){
   let errMsg=error.details.map((el)=>el.message).join(",");
   throw new ExpressError(404,errMsg)
 }else{
-  next();
+  next(); 
 }
 }
 

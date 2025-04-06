@@ -12,7 +12,8 @@
             <br>
             <%= listing.description %>
             <br>
-            &#8377; <%= listing.price.toLocaleString('en-IN') %>
+            &#8377; <%= listing.price ? listing.price.toLocaleString('en-IN') : 'N/A' %>/night
+ %>
             <br>
             <%= listing.location %>
             <br>
