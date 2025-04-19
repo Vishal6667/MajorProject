@@ -5,10 +5,12 @@
 
       <h3><%= listing.title %></h3>
 
-      <div class="card mb-3" style="width: 100%;">
+      <div class="card mb-3" style="width: 50%;">
         <img src="<%= listing.image %>" class="card-img-top show-image" alt="listing_image">
         <div class="card-body">
           <p class="card-text">
+            <i><strong>Owned by</strong> <%= listing.owner.username %><br><br></i>
+            
             <strong>Description:</strong><br>
             <%= listing.description %><br><br>
             <strong>Price:</strong> ₹<%= listing.price ? listing.price.toLocaleString('en-IN') : 'N/A' %>/night<br>
@@ -17,15 +19,21 @@
           </p>
         </div>
       </div>
-
+      <% if(currUser && listing.owner._id.equals(currUser._id)){ %>
       <div class="d-flex justify-content-between mb-4">
-        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark">Edit</a>
+        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark">
+          Edit
+        </a>
+
         <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
           <button class="btn btn-danger">Delete Post</button>
         </form>
       </div>
+ <% } %>
 
       <!-- Review Form -->
+
+      <% if(currUser) { %>
       <div>
         <h4>Leave a Review</h4>
         <hr>
@@ -41,7 +49,7 @@
           <button class="btn btn-outline-dark">Submit</button>
         </form>
       </div>
-
+      <% } %>
       <!-- All Reviews -->
       <hr>
       <h4>All Reviews</h4>
@@ -51,6 +59,7 @@
             <div class="card mb-3">
               <div class="card-body">
                 <!-- Optional: Add reviewer's name here -->
+                 <h5>@<%= review.author.username  %></h5>
                 <p class="card-text"><strong>Rating:</strong> <%= review.rating %>/5</p>
                 <p class="card-text"><%= review.comment %></p>
               </div>

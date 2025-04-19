@@ -111,3 +111,47 @@ font-weight: 400 !important;
   padding-left: 0;
   padding-right: 0;
 }
+
+/* All reviews */
+/* Reviews Section Styling */
+h4 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-body {
+  padding: 1rem 1.2rem;
+}
+
+.card h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+.btn-danger {
+  margin: 0.5rem;
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
